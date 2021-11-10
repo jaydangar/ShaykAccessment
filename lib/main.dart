@@ -47,6 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget initialWidget = SizedBox();
 
+  //  TODO : add to this email id to whom you want to send an email to
+  final List<String> sendEmailTo = <String>["jayjaydangr96@gmail.com"];
+
   final pdf = pw.Document();
   final String lifeSentence = '''
       Life is the aspect of existence that processes   acts   reacts   evaluates   and evolves through growth   reproduction and metabolism     The crucial difference between life and non  life   or non  living things   is that life uses energy for physical and conscious development   Life is anything that grows and eventually dies   i  e     ceases to proliferate and be cognizant   Can we say that viruses   for example   are cognizant   Yes   insofar as they react to stimuli   but they are alive essentially because they reproduce and grow   Computers are non  living because even though they can cognize   they do not develop biologically   grow     and cannot produce offspring   It is not cognition that determines life   then   it is rather proliferation and maturation towards a state of death   and death occurs only to living substances  
@@ -114,10 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final MailOptions mailOptions = MailOptions(
       body: 'Notice for the rent. Kindly check the attachment below.',
       subject: 'Legal Issues',
-      recipients: <String>[
-        'jayjaydangar96@gmail.com',
-        "rishabhpatel779@gmail.com"
-      ],
+      recipients: sendEmailTo,
       isHTML: true,
       attachments: [attachmentFilePath],
     );
